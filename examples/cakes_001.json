@@ -1,0 +1,164 @@
+{
+  "demand": {
+    "agent": "Demand",
+    "business_id": "cakes_001",
+    "assessment": "The business shows a positive orders trend with moderate demand stability and preorder coverage, suggesting a potentially growing demand.",
+    "confidence_level": "medium",
+    "key_factors": [
+      "Positive orders_trend.",
+      "Demand_stability of 0.65.",
+      "Preorder_coverage of 0.4."
+    ],
+    "assumptions": [
+      "The positive orders_trend will continue in the near term.",
+      "The current demand_stability is representative of future demand."
+    ],
+    "risks_or_constraints": [
+      "The std_over_mean_orders of 0.35 indicates some volatility in order volume.",
+      "The repeat_strength of 0.27 suggests that a significant portion of demand is not from repeat customers."
+    ],
+    "recommended_next_signals": [
+      "Analyze the drivers behind the orders_trend.",
+      "Investigate the reasons for the demand_stability level.",
+      "Assess the impact of the repeat_strength on future demand."
+    ]
+  },
+  "capacity": {
+    "agent": "Capacity",
+    "business_id": "cakes_001",
+    "assessment": "Capacity is constrained, but delivery is reliable. Further investigation into the nature of the capacity constraint is recommended.",
+    "confidence_level": "medium",
+    "key_factors": [
+      "capacity_utilization is 0.63, indicating significant headroom.",
+      "max_capacity_utilization is 1.0, suggesting full capacity.",
+      "delivery_reliability is 0.9, showing dependable fulfillment.",
+      "capacity_constraint_flag is true, indicating capacity limitations are being reached."
+    ],
+    "assumptions": [
+      "The capacity constraint is accurately reflected by the capacity_constraint_flag.",
+      "Delivery reliability will remain consistent."
+    ],
+    "risks_or_constraints": [
+      "The business is operating at or near its maximum capacity (max_capacity_utilization of 1.0) while also experiencing a capacity constraint (capacity_constraint_flag is true).",
+      "Increased demand could lead to fulfillment issues despite high delivery_reliability."
+    ],
+    "recommended_next_signals": [
+      "Investigate the specific reasons for the capacity_constraint_flag.",
+      "Analyze the trend of capacity utilization over time.",
+      "Assess the impact of increased orders on delivery_reliability."
+    ]
+  },
+  "risk": {
+    "agent": "Risk",
+    "business_id": "cakes_001",
+    "assessment": "The business faces moderate risk due to order volatility and capacity constraints.",
+    "confidence_level": "medium",
+    "key_factors": [
+      "High order volatility (std_over_mean_orders: 0.35) indicates fluctuating demand.",
+      "Capacity constraint (capacity_constraint_flag: true) suggests potential inability to fulfill all orders.",
+      "The business has a moderate concentration of revenue from top customers (avg_top3_customer_share: 0.32)."
+    ],
+    "assumptions": [
+      "Delivery reliability (delivery_reliability: 0.9) is currently strong, mitigating some risk.",
+      "The business can maintain current delivery performance."
+    ],
+    "risks_or_constraints": [
+      "The volatility_flag indicates volatile order patterns, which could impact revenue predictability.",
+      "Capacity constraints may limit the ability to scale and fulfill demand.",
+      "Changes in the top customers' behavior could significantly impact revenue."
+    ],
+    "recommended_next_signals": [
+      "Monitor order patterns and volatility over time.",
+      "Assess the impact of capacity constraints on order fulfillment.",
+      "Analyze customer concentration and potential impact of customer churn."
+    ]
+  },
+  "narrative": {
+    "agent": "Narrative",
+    "business_id": "cakes_001",
+    "future_earnings_profile": "Demand certainty: Low. Capacity reality: Episodically Constrained. Earnings posture: \"Uncertain with episodic stress\". The business is positioned as \"Uncertain with episodic stress\" due to low demand certainty. Demand_stability is 0.65, and std_over_mean_orders is 0.35, indicating moderate demand stability with some volatility. Capacity is episodically constrained. Average capacity_utilization is 0.63, but max_capacity_utilization is 1.0, suggesting the business can reach full capacity. The business faces risks from order volatility and capacity constraints.",
+    "base_case_summary": "If current conditions persist, the business is likely to experience fluctuating order volumes due to volatility (std_over_mean_orders of 0.35). While delivery reliability is currently high at 0.9, the capacity constraint (max_capacity_utilization of 1.0) could lead to fulfillment challenges if demand increases. Revenue may be impacted by changes in the top customers' behavior, given an avg_top3_customer_share of 0.32.",
+    "upside_conditions": [
+      "Sustained positive orders_trend.",
+      "Improved demand_stability.",
+      "Increased preorder coverage."
+    ],
+    "downside_risks": [
+      "Increased order volatility.",
+      "Capacity constraints limiting fulfillment.",
+      "Changes in top customer behavior impacting revenue."
+    ],
+    "confidence_level": "low",
+    "key_assumptions": [
+      "The positive orders_trend will continue.",
+      "Delivery reliability will remain consistent.",
+      "The capacity constraint will not worsen."
+    ],
+    "what_would_change_this_outcome": [
+      "Significant changes in demand_stability.",
+      "Expansion of production capacity.",
+      "Changes in customer concentration."
+    ],
+    "diagnostics": {
+      "demand_certainty": "Low",
+      "capacity_reality": "Episodically Constrained",
+      "earnings_posture_rule_result": "Uncertain with episodic stress",
+      "confidence_level_rule_result": "low"
+    }
+  },
+  "scenarios": {
+    "agent": "Scenario",
+    "business_id": "cakes_001",
+    "posture": "Uncertain with episodic stress",
+    "scenarios": [
+      {
+        "scenario": "base",
+        "earnings_direction": "stable",
+        "confidence": "low",
+        "primary_drivers": [
+          "Order volatility",
+          "Capacity constraints",
+          "Top customer behavior"
+        ],
+        "description": "The base case anticipates continued earnings uncertainty due to fluctuating order volumes and episodic capacity constraints. Revenue is vulnerable to shifts in top customer behavior."
+      },
+      {
+        "scenario": "upside",
+        "earnings_direction": "increase",
+        "confidence": "low",
+        "primary_drivers": [
+          "Sustained positive order trend",
+          "Improved demand stability",
+          "Increased preorder coverage"
+        ],
+        "description": "An upside scenario could emerge with sustained positive order trends, improved demand stability, and increased preorder coverage, potentially mitigating the impact of capacity constraints."
+      },
+      {
+        "scenario": "downside",
+        "earnings_direction": "decline",
+        "confidence": "low",
+        "primary_drivers": [
+          "Increased order volatility",
+          "Capacity constraints limiting fulfillment",
+          "Changes in top customer behavior"
+        ],
+        "description": "The downside reflects increased order volatility, capacity constraints, and changes in top customer behavior, which could negatively impact revenue and fulfillment capabilities."
+      }
+    ]
+  },
+  "business_id": "cakes_001",
+  "window_weeks": 8,
+  "features": {
+    "demand_stability": 0.65,
+    "preorder_coverage": 0.4,
+    "std_over_mean_orders": 0.35,
+    "repeat_strength": 0.27,
+    "capacity_utilization": 0.63,
+    "max_capacity_utilization": 1.0,
+    "delivery_reliability": 0.9,
+    "capacity_constraint_flag": true,
+    "avg_top3_customer_share": 0.32,
+    "orders_trend": 0.06,
+    "volatility_flag": true
+  }
+}
