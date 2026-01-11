@@ -33,7 +33,18 @@ h1, h2, h3 { letter-spacing: -0.2px; }
 h2 { margin-top: 0.6rem; }
 h3 { margin-top: 0.4rem; }
 
-.small-muted { color: rgba(49,51,63,0.72); font-size: 0.92rem; }
+.small-muted { 
+  color: rgba(49,51,63,0.72); 
+  font-size: 0.92rem; 
+}
+
+/* FIX: prevent header subtitle from being clipped on narrow widths */
+.header-subtitle{
+  white-space: normal !important;   /* allow wrapping */
+  overflow: visible !important;     /* don't clip */
+  line-height: 1.25;
+  margin-top: -0.25rem;
+}
 
 /* Pills */
 .pill {
@@ -141,15 +152,15 @@ def clamp(s: str, n: int = 110) -> str:
 # -----------------------------
 # Header
 # -----------------------------
-left, right = st.columns([1.2, 2.8])
-with left:
-    st.markdown("## EFF")
-with right:
-    st.markdown(
-        '<div class="small-muted">Earned Future Financing — explainable earnings readiness & risk signals for capacity-constrained SMBs. '
-        '<b>Not forecasting</b>.</div>',
-        unsafe_allow_html=True,
-    )
+st.markdown("## EFF")
+st.markdown(
+    '<div class="small-muted header-subtitle">'
+    'Earned Future Financing — explainable earnings readiness &amp; risk signals for capacity-constrained SMBs. '
+    '<b>Not forecasting</b>.'
+    "</div>",
+    unsafe_allow_html=True,
+)
+
 
 st.divider()
 
