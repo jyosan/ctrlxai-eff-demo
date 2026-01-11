@@ -6,6 +6,15 @@ from typing import Any, Dict, Optional
 import pandas as pd
 import streamlit as st
 
+import sys
+
+
+# Ensure project root is on sys.path (works locally + Streamlit Cloud)
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+
 from eff.adapters_v1 import adapt_internal_bundle_to_v1
 
 
